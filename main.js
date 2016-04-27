@@ -3,3 +3,10 @@
  */
 
 "use strict";
+
+var i = 3;
+if(i){
+    console.log('真');
+}else{
+    console.log('假');
+}

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="ThemeBucket">
+    <link rel="shortcut icon" href="#" type="image/png">
+
+    <title>添加会员</title>
+
+    <link href="lib/css/style.css" rel="stylesheet">
+    <link href="lib/css/jquery.stepy.css" rel="stylesheet">
+    <link href="lib/css/style-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <script src="lib/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="sticky-header">
+
+<section>
+    <!-- left side start-->
+    <% include left.content.ejs %>
+    <!-- left side end-->
+
+    <!-- main content start-->
+    <div class="main-content" >
+
+        <!-- header section start-->
+        <% include header.content.ejs %>
+        <!-- header section end-->
+
+        <!-- page heading start-->
+        <div class="page-heading">
+            <h3>
+                添加会员
+            </h3>
+            <ul class="breadcrumb">
+                <li>
+                    <a href="#">会员管理</a>
+                </li>
+                <li class="active">添加会员</li>
+            </ul>
+        </div>
+        <!-- page heading end-->
+        <hr/>
+        <!--body wrapper start-->
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="square-widget">
+                        <div class="widget-container">
+                            <div class="stepy-tab">
+                            </div>
+                            <form id="default" class="form-horizontal">
+                                <fieldset title="基本信息">
+                                    <legend>个人基本信息</legend>
+                                    <div class="form-group">
+                                        <label class="col-md-2 col-sm-2 control-label">昵称</label>
+                                        <div class="col-md-6 col-sm-6">
+                                            <input type="text" placeholder="Name" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 col-sm-2 control-label">Email</label>
+                                        <div class="col-md-6 col-sm-6">
+                                            <input type="text" placeholder="Email" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 col-sm-2 control-label">手机号码</label>
+                                        <div class="col-md-6 col-sm-6">
+                                            <input type="text" placeholder="Mobile" class="form-control">
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <fieldset title="安全设置">
+                                    <legend>安全相关信息</legend>
+                                    <div class="form-group">
+                                        <label class="col-md-2 col-sm-2 control-label">密码</label>
+                                        <div class="col-md-6 col-sm-6">
+                                            <input type="text" placeholder="Password" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 col-sm-2 control-label">再次输入密码</label>
+                                        <div class="col-md-6 col-sm-6">
+                                            <input type="text" placeholder="Password" class="form-control">
+                                        </div>
+                                    </div>
+
+                                </fieldset>
+                                <fieldset title="射箭相关">
+                                    <legend>射箭相关默认设置</legend>
+                                    <div class="form-group">
+                                        <label class="col-md-2 col-sm-2 control-label">箭道</label>
+                                        <div class="col-md-6 col-sm-6">
+                                            <input type="text" placeholder="The arrow" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 col-sm-2 control-label">箭组</label>
+                                        <div class="col-md-6 col-sm-6">
+                                            <input type="text" placeholder="ArrowCount" class="form-control">
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <button class="btn btn-info finish">
+                                    完成 </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--body wrapper end-->
+
+        <!--footer section start-->
+        <footer class="sticky-footer">
+            2016 &copy; www.iBaxin.com
+        </footer>
+        <!--footer section end-->
+
+
+    </div>
+    <!-- main content end-->
+</section>
+
+<!-- Placed js at the end of the document so the pages load faster -->
+<script src="lib/js/jquery-1.10.2.min.js"></script>
+<script src="lib/js/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="lib/js/jquery-migrate-1.2.1.min.js"></script>
+<script src="lib/js/jquery.validate.min.js"></script>
+<script src="lib/js/jquery.stepy.js"></script>
+<script src="lib/js/bootstrap.min.js"></script>
+<script src="lib/js/modernizr.min.js"></script>
+<script src="lib/js/jquery.nicescroll.js"></script>
+
+
+<!--common scripts for all pages-->
+<script src="lib/js/scripts.js"></script>
+
+<script>
+    /*=====STEPY WIZARD====*/
+    $(function() {
+        $('#default').stepy({
+            backLabel: '上一步',
+            block: true,
+            nextLabel: '下一步',
+            titleClick: true,
+            titleTarget: '.stepy-tab'
+        });
+    });
+    /*=====STEPY WIZARD WITH VALIDATION====*/
+    $(function() {
+        $('#stepy_form').stepy({
+            backLabel: 'Back',
+            nextLabel: 'Next',
+            errorImage: true,
+            block: true,
+            description: true,
+            legend: false,
+            titleClick: true,
+            titleTarget: '#top_tabby',
+            validate: true
+        });
+        $('#stepy_form').validate({
+            errorPlacement: function(error, element) {
+                $('#stepy_form div.stepy-error').append(error);
+            },
+            rules: {
+                'name': 'required',
+                'email': 'required'
+            },
+            messages: {
+                'name': {
+                    required: 'Name field is required!'
+                },
+                'email': {
+                    required: 'Email field is requerid!'
+                }
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

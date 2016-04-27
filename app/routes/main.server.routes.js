@@ -19,4 +19,29 @@ module.exports = function(app){
         .get(function(req,res){
             res.render('login',{});
         });
+
+    app.route('/memberinfo')
+        .get(function(req,res){
+            res.render('memberInfo',{});
+        });
+
+    app.route('/addmember')
+        .get(function(req,res){
+            res.render('addmember',{});
+        });
+
+    app.route('/product')
+        .get(function(req,res){
+            res.render('product',{});
+        });
+
+    app.route('/invoice')
+        .get(function(req,res){
+            res.render('invoice',{});
+        });
+
+    app.route('/order')
+        .get(function(req,res){
+            res.render('order',{});
+        });
 };

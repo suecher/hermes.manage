@@ -20,7 +20,7 @@
 .stepy-titles li { color: #DDD; cursor: pointer;  float: left; padding: 10px 15px; }
 .stepy-titles li span { display: block; }
 .stepy-titles .current-step { color: #369; cursor: auto; }
-.stepy-titles li div{ font-size:18px;}
+.stepy-titles li div{ font-size:14px;}
 
 /*** Optionaly (jQuery Validate) ***/
 
