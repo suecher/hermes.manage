@@ -44,4 +44,9 @@ module.exports = function(app){
         .get(function(req,res){
             res.render('order',{});
         });
+
+    app.route('/clubinfo')
+        .get(function(req,res){
+            res.render('clubinfo',{});
+        });
 };
