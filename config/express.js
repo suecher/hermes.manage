@@ -22,6 +22,8 @@ module.exports = function(){
     app.use(express.static('../public'));
 
     require('../app/routes/main.server.routes')(app);
+    require('../app/routes/club.server.routes')(app);
+    require('../app/routes/areas.server.routes')(app);
 
     app.use(function(req,res){
         res.status(404);

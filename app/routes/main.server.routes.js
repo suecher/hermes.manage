@@ -11,7 +11,7 @@ module.exports = function(app){
 
     app.route('/main')
         .get(function(req,res){
-            res.end();
+            res.render('main',{});
         });
 
 

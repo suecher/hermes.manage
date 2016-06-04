@@ -299,7 +299,7 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 col-sm-2 control-label">场地面积</label>
                                     <div class="col-sm-10">
-                                        <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled>
+                                        <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here...">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -342,283 +342,64 @@
                         </div>
                     </section>
                     <section class="panel">
-                        <div class="panel-body">
-                            <form class="form-horizontal adminex-form" method="get">
-                                <div class="form-group has-success">
-                                    <label class="col-sm-2 control-label col-lg-2" for="inputSuccess">Input with success</label>
-                                    <div class="col-lg-10">
-                                        <input type="text" class="form-control" id="inputSuccess">
-                                    </div>
-                                </div>
-                                <div class="form-group has-warning">
-                                    <label class="col-sm-2 control-label col-lg-2" for="inputWarning">Input with warning</label>
-                                    <div class="col-lg-10">
-                                        <input type="text" class="form-control" id="inputWarning">
-                                    </div>
-                                </div>
-                                <div class="form-group has-error">
-                                    <label class="col-sm-2 control-label col-lg-2" for="inputError">Input with error</label>
-                                    <div class="col-lg-10">
-                                        <input type="text" class="form-control" id="inputError">
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </section>
-                    <section class="panel">
-                        <div class="panel-body">
-                            <form class="form-horizontal adminex-form" method="get">
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label col-lg-2" for="inputSuccess">Checkboxes and radios</label>
-                                    <div class="col-lg-10">
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox" value="">
-                                                Option one is this and that&mdash;be sure to include why it's great
-                                            </label>
-                                        </div>
-
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox" value="">
-                                                Option one is this and that&mdash;be sure to include why it's great option one
-                                            </label>
-                                        </div>
-
-                                        <div class="radio">
-                                            <label>
-                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                                                Option one is this and that&mdash;be sure to include why it's great
-                                            </label>
-                                        </div>
-                                        <div class="radio">
-                                            <label>
-                                                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                                                Option two can be something else and selecting it will deselect option one
-                                            </label>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label col-lg-2" for="inputSuccess">Inline checkboxes</label>
-                                    <div class="col-lg-10">
-                                        <label class="checkbox-inline">
-                                            <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
-                                        </label>
-                                        <label class="checkbox-inline">
-                                            <input type="checkbox" id="inlineCheckbox2" value="option2"> 2
-                                        </label>
-                                        <label class="checkbox-inline">
-                                            <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
-                                        </label>
-
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label col-lg-2" for="inputSuccess">Selects</label>
-                                    <div class="col-lg-10">
-                                        <select class="form-control m-bot15">
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                        </select>
-
-                                        <select multiple class="form-control">
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label col-lg-2" for="inputSuccess">Column sizing</label>
-                                    <div class="col-lg-10">
-                                        <div class="row">
-                                            <div class="col-lg-2">
-                                                <input type="text" class="form-control" placeholder=".col-lg-2">
-                                            </div>
-                                            <div class="col-lg-3">
-                                                <input type="text" class="form-control" placeholder=".col-lg-3">
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <input type="text" class="form-control" placeholder=".col-lg-4">
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                            </form>
-                        </div>
-                    </section>
-                    <section class="panel">
                         <header class="panel-heading">
-                            Input groups
+                            场馆信息描述
                         </header>
                         <div class="panel-body">
                             <form class="form-horizontal adminex-form" method="get">
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label col-lg-2" >Basic examples</label>
+                                    <label class="col-sm-2 control-label col-lg-2" for="inputSuccess">配套</label>
                                     <div class="col-lg-10">
-                                        <div class="input-group m-bot15">
-                                            <span class="input-group-addon">@</span>
-                                            <input type="text" class="form-control" placeholder="Username">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" value="">
+                                                是否有教练
+                                            </label>
                                         </div>
 
-                                        <div class="input-group m-bot15">
-                                            <input type="text" class="form-control">
-                                            <span class="input-group-addon">.00</span>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" value="">
+                                                是否有茶座
+                                            </label>
                                         </div>
 
-                                        <div class="input-group m-bot15">
-                                            <span class="input-group-addon">$</span>
-                                            <input type="text" class="form-control">
-                                            <span class="input-group-addon ">.00</span>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" value="">
+                                                是否有WIFI
+                                            </label>
+                                        </div>
+
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" value="">
+                                                是否有停车场
+                                            </label>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label col-lg-2" >Sizing</label>
-                                    <div class="col-lg-10">
-                                        <div class="input-group input-group-lg m-bot15">
-                                            <span class="input-group-addon">@</span>
-                                            <input type="text" class="form-control input-lg" placeholder="Username">
-                                        </div>
-
-                                        <div class="input-group m-bot15">
-                                            <span class="input-group-addon">@</span>
-                                            <input type="text" class="form-control" placeholder="Username">
-                                        </div>
-
-                                        <div class="input-group input-group-sm m-bot15">
-                                            <span class="input-group-addon">@</span>
-                                            <input type="text" class="form-control" placeholder="Username">
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label col-lg-2" >Checkboxe and radio</label>
-                                    <div class="col-lg-10">
-                                        <div class="input-group m-bot15">
-                                              <span class="input-group-addon">
-                                                <input type="checkbox">
-                                              </span>
-                                            <input type="text" class="form-control">
-                                        </div>
-
-                                        <div class="input-group m-bot15">
-                                              <span class="input-group-addon">
-                                                <input type="radio">
-                                              </span>
-                                            <input type="text" class="form-control">
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label col-lg-2" >Button addons</label>
-                                    <div class="col-lg-10">
-                                        <div class="input-group m-bot15">
-                                              <span class="input-group-btn">
-                                                <button class="btn btn-default" type="button">Go!</button>
-                                              </span>
-                                            <input type="text" class="form-control">
-                                        </div>
-
-                                        <div class="input-group m-bot15">
-                                            <input type="text" class="form-control">
-                                              <span class="input-group-btn">
-                                                <button class="btn btn-default" type="button">Go!</button>
-                                              </span>
-                                        </div>
-
-                                        <div class="input-group m-bot15">
-                                            <div class="input-group-btn">
-                                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
-                                                <ul class="dropdown-menu">
-                                                    <li><a href="#">Action</a></li>
-                                                    <li><a href="#">Another action</a></li>
-                                                    <li><a href="#">Something else here</a></li>
-                                                    <li class="divider"></li>
-                                                    <li><a href="#">Separated link</a></li>
-                                                </ul>
-                                            </div>
-                                            <input type="text" class="form-control">
-                                        </div>
-                                        <div class="input-group m-bot15">
-                                            <input type="text" class="form-control">
-                                            <div class="input-group-btn">
-                                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
-                                                <ul class="dropdown-menu pull-right">
-                                                    <li><a href="#">Action</a></li>
-                                                    <li><a href="#">Another action</a></li>
-                                                    <li><a href="#">Something else here</a></li>
-                                                    <li class="divider"></li>
-                                                    <li><a href="#">Separated link</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label col-lg-2" >Segmented buttons</label>
-                                    <div class="col-lg-10">
-                                        <div class="input-group m-bot15">
-                                            <div class="input-group-btn">
-                                                <button tabindex="-1" class="btn btn-default" type="button">Action</button>
-                                                <button tabindex="-1" data-toggle="dropdown" class="btn btn-default dropdown-toggle" type="button">
-                                                    <span class="caret"></span>
-                                                </button>
-                                                <ul role="menu" class="dropdown-menu">
-                                                    <li><a href="#">Action</a></li>
-                                                    <li><a href="#">Another action</a></li>
-                                                    <li><a href="#">Something else here</a></li>
-                                                    <li class="divider"></li>
-                                                    <li><a href="#">Separated link</a></li>
-                                                </ul>
-                                            </div>
-                                            <input type="text" class="form-control">
-                                        </div>
-
-                                        <div class="input-group m-bot15">
-                                            <input type="text" class="form-control">
-                                            <div class="input-group-btn">
-                                                <button tabindex="-1" class="btn btn-default" type="button">Action</button>
-                                                <button tabindex="-1" data-toggle="dropdown" class="btn btn-default dropdown-toggle" type="button">
-                                                    <span class="caret"></span>
-                                                </button>
-                                                <ul role="menu" class="dropdown-menu pull-right">
-                                                    <li><a href="#">Action</a></li>
-                                                    <li><a href="#">Another action</a></li>
-                                                    <li><a href="#">Something else here</a></li>
-                                                    <li class="divider"></li>
-                                                    <li><a href="#">Separated link</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
                             </form>
                         </div>
                     </section>
+
+                    <div class="row">
+                        <div class="col-sm-2 col-md-offset-3">
+                            <button type="button" class="btn btn-success btn-lg btn-block">保存</button>
+                        </div>
+                        <div class="col-sm-2 col-md-offset-2">
+                            <button type="button" class="btn btn-warning btn-lg btn-block">重置</button>
+                        </div>
+                    </div>
+
                     <section class="panel">
                         <header class="panel-heading">
-                            Textarea
+                            场馆信息描述
                         </header>
                         <div class="panel-body">
                             <form method="get" class="form-horizontal bucket-form">
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label">Textarea label</label>
+                                    <label class="col-sm-2 control-label">描述</label>
                                     <div class="col-sm-10">
                                         <textarea rows="6" class="form-control"></textarea>
                                     </div>
@@ -626,146 +407,67 @@
                             </form>
                         </div>
                     </section>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
 
-                    <div class="panel" data-collapsed="0">
-
-                        <div class="panel-heading">
-                            <div class="panel-title">
-                                Input Grid
-                            </div>
-                        </div>
-
+                    <section class="panel">
+                        <header class="panel-heading">
+                            场馆展示
+                        </header>
                         <div class="panel-body">
-
-                            <div class="row">
-
-                                <div class="col-md-12 form-group">
-                                    <input type="text" class="form-control" placeholder=".col-md-12">
+                            <form method="get" class="form-horizontal bucket-form">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">图片</label>
+                                    <div class="col-sm-10">
+                                        <img src="lib/images/club/1.png" alt="" class="img-responsive" style="border-radius: 8px;">
+                                        <br/><br/>
+                                        <button type="button" class="btn btn-primary"> 上传图片 </button>
+                                    </div>
                                 </div>
-
-                                <div class="col-md-6 form-group">
-                                    <input type="text" class="form-control" placeholder=".col-md-6">
-                                </div>
-
-                                <div class="col-md-6 form-group">
-                                    <input type="text" class="form-control" placeholder=".col-md-6">
-                                </div>
-
-
-                                <div class="col-md-4 form-group">
-                                    <input type="text" class="form-control" placeholder=".col-md-4">
-                                </div>
-
-                                <div class="col-md-4 form-group">
-                                    <input type="text" class="form-control" placeholder=".col-md-4">
-                                </div>
-
-                                <div class="col-md-4 form-group">
-                                    <input type="text" class="form-control" placeholder=".col-md-4">
-                                </div>
-
-
-                                <div class="col-md-3 form-group">
-                                    <input type="text" class="form-control" placeholder=".col-md-3">
-                                </div>
-
-                                <div class="col-md-3 form-group">
-                                    <input type="text" class="form-control" placeholder=".col-md-3">
-                                </div>
-
-                                <div class="col-md-3 form-group">
-                                    <input type="text" class="form-control" placeholder=".col-md-3">
-                                </div>
-
-                                <div class="col-md-3 form-group">
-                                    <input type="text" class="form-control" placeholder=".col-md-3">
-                                </div>
-
-
-                                <div class="col-md-2 form-group">
-                                    <input type="text" class="form-control" placeholder=".col-md-2">
-                                </div>
-
-                                <div class="col-md-2 form-group">
-                                    <input type="text" class="form-control" placeholder=".col-md-2">
-                                </div>
-
-                                <div class="col-md-2 form-group">
-                                    <input type="text" class="form-control" placeholder=".col-md-2">
-                                </div>
-
-                                <div class="col-md-2 form-group">
-                                    <input type="text" class="form-control" placeholder=".col-md-2">
-                                </div>
-
-                                <div class="col-md-2 form-group">
-                                    <input type="text" class="form-control" placeholder=".col-md-2">
-                                </div>
-
-                                <div class="col-md-2 form-group">
-                                    <input type="text" class="form-control" placeholder=".col-md-2">
-                                </div>
-
-
-                                <div class="col-md-1 form-group">
-                                    <input type="text" class="form-control" placeholder=".col-md-1">
-                                </div>
-
-                                <div class="col-md-1 form-group">
-                                    <input type="text" class="form-control" placeholder=".col-md-1">
-                                </div>
-
-                                <div class="col-md-1 form-group">
-                                    <input type="text" class="form-control" placeholder=".col-md-1">
-                                </div>
-
-                                <div class="col-md-1 form-group">
-                                    <input type="text" class="form-control" placeholder=".col-md-1">
-                                </div>
-
-                                <div class="col-md-1 form-group">
-                                    <input type="text" class="form-control" placeholder=".col-md-1">
-                                </div>
-
-                                <div class="col-md-1 form-group">
-                                    <input type="text" class="form-control" placeholder=".col-md-1">
-                                </div>
-
-                                <div class="col-md-1 form-group">
-                                    <input type="text" class="form-control" placeholder=".col-md-1">
-                                </div>
-
-                                <div class="col-md-1 form-group">
-                                    <input type="text" class="form-control" placeholder=".col-md-1">
-                                </div>
-
-                                <div class="col-md-1 form-group">
-                                    <input type="text" class="form-control" placeholder=".col-md-1">
-                                </div>
-
-                                <div class="col-md-1 form-group">
-                                    <input type="text" class="form-control" placeholder=".col-md-1">
-                                </div>
-
-                                <div class="col-md-1 form-group">
-                                    <input type="text" class="form-control" placeholder=".col-md-1">
-                                </div>
-
-                                <div class="col-md-1 form-group">
-                                    <input type="text" class="form-control" placeholder=".col-md-1">
-                                </div>
-                            </div>
-
+                            </form>
                         </div>
+                    </section>
 
-                    </div>
+                    <section class="panel">
+                        <header class="panel-heading">
+                            场馆展示
+                        </header>
+                        <div class="panel-body">
+                            <form method="get" class="form-horizontal bucket-form">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">图片</label>
+                                    <div class="col-sm-10">
+                                        <img src="lib/images/club/2.png" alt="" class="img-responsive" style="border-radius: 8px;">
+                                        <br/><br/>
+                                        <button type="button" class="btn btn-primary"> 上传图片 </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+
+
+                    <section class="panel">
+                        <header class="panel-heading">
+                            场馆展示
+                        </header>
+                        <div class="panel-body">
+                            <form method="get" class="form-horizontal bucket-form">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">图片</label>
+                                    <div class="col-sm-10">
+                                        <img src="lib/images/club/3.png" alt="" class="img-responsive" style="border-radius: 8px;">
+                                        <br/><br/>
+                                        <button type="button" class="btn btn-primary"> 上传图片 </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+
+
 
                 </div>
             </div>
+
             <!-- page end-->
         </section>
         <!--body wrapper end-->
