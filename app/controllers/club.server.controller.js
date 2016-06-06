@@ -14,7 +14,7 @@ module.exports = {
             url:config.interface + "/clubbyid",
             headers:{
                 'Content-Type':'application/json',
-                'User-Agent':'request',
+                'User-Agent':'request'
             },
             json:{
                 "clubId":clubId
@@ -27,7 +27,23 @@ module.exports = {
             }
         });
     },
-    updateClubInfo:function(clubId,updateObj){
+    updateClubInfo:function(clubId,updateObj,callback){
+        let options = {
+            url:config.interface + "/clubupdate",
+            headers:{
+                'Content-Type':'application/json',
+                'User-Agent':'request'
+            },
+            json:{
+                "clubId":clubId,
+                "obj":updateObj
+            }
+        };
 
+        request.post(options,function(error,res,body){
+            if (!error && res.statusCode == 200) {
+                callback(body);
+            }
+        });
     }
 };

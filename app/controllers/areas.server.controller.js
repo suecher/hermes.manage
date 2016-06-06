@@ -13,7 +13,7 @@ module.exports = {
             if (!error && response.statusCode == 200) {
                 callback(body);
             }
-        })
+        });
     },
     getProvince:function(callback){
         request(config.interface+"/areas/province", function (error, response, body) {
