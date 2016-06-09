@@ -12,18 +12,19 @@ module.exports = {
             url:config.interface + "/managerlogin",
             headers:{
                 'Content-Type':'application/json',
-                'User-Agent':'request',
+                'User-Agent':'request'
             },
             json:{
                 "username":clientUser.username,
                 "password":clientUser.password
             }
         };
-
         request.post(options,function(error,res,body){
+
             if (!error && res.statusCode == 200) {
                 callback(body);
             }
+            console.log(res);
         });
     }
 };

@@ -1,9 +1,7 @@
 "use strict";
 
+
 angular.module('app',[])
-    .controller('LoginCtrl',function($scope,$http){
-
-    })
-    .controller('ClubCtrl',function($scope,$http){
-
+    .controller('MainCtrl',function($scope,$http){
+        
     });

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -16,23 +16,24 @@
     <!--[if lt IE 9]>
     <script src="lib/js/html5shiv.js"></script>
     <script src="lib/js/respond.min.js"></script>
+
     <![endif]-->
 </head>
 
-<body class="login-body">
+<body class="login-body" ng-controller="LoginCtrl">
 
 <div class="container">
 
-    <form class="form-signin" action="index.html">
+    <form class="form-signin">
         <div class="form-signin-heading text-center">
             <h1 class="sign-title">注册</h1>
             <img src="lib/images/login-logo.png" alt=""/>
         </div>
         <div class="login-wrap">
-            <input type="text" class="form-control" placeholder="用户名" autofocus>
-            <input type="password" class="form-control" placeholder="密码">
+            <input type="text" class="form-control" placeholder="用户名" ng-model="username" autofocus>
+            <input type="password" class="form-control" placeholder="密码" ng-model="password">
 
-            <button class="btn btn-lg btn-login btn-block" type="submit">
+            <button class="btn btn-lg btn-login btn-block" type="submit"  ng-click="login()">
                 <i class="fa fa-check"></i>
             </button>
 
@@ -80,6 +81,7 @@
 <script src="lib/js/jquery-1.10.2.min.js"></script>
 <script src="lib/js/bootstrap.min.js"></script>
 <script src="lib/js/modernizr.min.js"></script>
+<script src="http://cdn.bootcss.com/angular.js/1.4.11/angular.min.js"></script>
 <script src="service/login.client.service.js"></script>
 </body>
 </html>

@@ -14,10 +14,9 @@ module.exports = function(app){
             res.render('main',{});
         });
 
-
     app.route('/login')
         .get(function(req,res){
-            res.render('login',{});
+            res.render('login',{currentClub:req.session.club,currentManager:req.session.user});
         });
 
     app.route('/memberinfo')

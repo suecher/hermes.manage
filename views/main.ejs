@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -19,7 +19,6 @@
     <!--dashboard calendar-->
     <link href="lib/css/clndr.css" rel="stylesheet">
 
-
     <!--common-->
     <link href="lib/css/style.css" rel="stylesheet">
     <link href="lib/css/style-responsive.css" rel="stylesheet">
@@ -32,7 +31,12 @@
     <![endif]-->
 </head>
 
-<body class="sticky-header">
+<body class="sticky-header" ng-controller="MainCtrl">
+
+<div id="currentClubInfo"  style="display:none;"><%= currentClub%></div>
+<div id="currentManagerInfo"  style="display:none;"><%= currentManager%></div>
+<div ng-bind="ngManagerInfo" style="display: none;"></div>
+<div ng-bind="ngClubInfo" style="display: none;"></div>
 
 <section>
     <!-- left side start-->
@@ -290,6 +294,11 @@
 <script src="lib/js/flot-chart/jquery.flot.stack.js"></script>
 <script src="lib/js/flot-chart/jquery.flot.time.js"></script>
 <script src="lib/js/main-chart.js"></script>
+
+
+
+<script src="http://cdn.bootcss.com/angular.js/1.4.11/angular.min.js"></script>
+<script src="service/main.client.service.js"></script>
 
 <!--common scripts for all pages-->
 <script src="lib/js/scripts.js"></script>
