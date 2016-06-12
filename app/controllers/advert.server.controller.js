@@ -8,7 +8,10 @@ let request = require('request');
 let config = require('../../config/config');
 
 module.exports = {
-    update:function(clubId,callback){
+    create:function(client,callback){
+
+    },
+    remove:function(clubId,callback) {
 
     }
 };
