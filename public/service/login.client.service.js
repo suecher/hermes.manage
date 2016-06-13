@@ -10,15 +10,14 @@ angular.module('app',[])
             $http.post('/login',{username:$scope.username,password:$scope.password})
                 .success(function(data){
                     if(data.result){
-                        alert('登陆成功');
+                        swal("登陆成功", "验证信息正确", "success")
                         window.location.href = "/main";
                     } else {
-                        console.log(data);
-                        alert('登陆失败');
+                        sweetAlert("登陆信息错误!", "登陆失败", "error");
                     }
                 })
                 .error(function(data){
-                    console.log(data);
+                    sweetAlert("登陆信息错误!", "登陆失败", "error");
                 });
         }
     });

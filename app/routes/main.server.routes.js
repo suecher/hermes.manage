@@ -32,7 +32,6 @@ module.exports = function(app){
     app.route('/')
         .get(function(req,res){
             res.render('main',{});
-            //res.send({t1:"123"});
         });
 
     app.route('/advert')
@@ -49,8 +48,6 @@ module.exports = function(app){
         .get(function(req,res){
             res.render('login',{currentClub:req.session.club,currentManager:req.session.user});
         });
-
-
 
     app.route('/memberinfo')
         .get(function(req,res){
@@ -79,6 +76,30 @@ module.exports = function(app){
 
     app.route('/clubinfo')
         .get(function(req,res){
-            res.render('clubinfo',{});
+            let currentClub = {
+                "_id" : "573daa1f770a7355eb24d923",
+                "name" : "福建省中山市飞扬射箭俱乐部",
+                "logo" : "713afffa-a469-4613-8ab7-8b1e406545f0.png",
+                "pictureList" : [],
+                "address" : "福建省中山市石岐街道石岐区逢源食街1号三楼(市药监局对面)",
+                "province" : 19,
+                "city" : 205,
+                "district" : 205,
+                "summary" : "这个是描述信息",
+                "phone" : "0760-88383584",
+                "cphone" : "0760-88383584",
+                "cperson" : "赖教武",
+                "houseSize" : 400,
+                "arrowRoadSize" : 24,
+                "wifi" : true,
+                "parking" : true,
+                "followSize" : 1,
+                "memberSize" : 0,
+                "coach":false,
+                "saloon":true
+
+            };
+
+            res.render('clubinfo',{currentClub:currentClub,currentManager:currentManager});
         });
 };

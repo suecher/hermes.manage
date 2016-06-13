@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -18,9 +18,22 @@
     <script src="lib/js/html5shiv.js"></script>
     <script src="lib/js/respond.min.js"></script>
     <![endif]-->
+
+
 </head>
 
-<body class="sticky-header">
+<script>
+    var currentClub = '<%- JSON.stringify(currentClub) %>';
+    var currentManager = '<%- JSON.stringify(currentManager) %>';
+    currentClub = JSON.parse(currentClub);
+    currentManager = JSON.parse(currentManager);
+
+</script>
+
+<body class="sticky-header" ng-controller="ClubCtrl">
+
+<div ng-bind="ngManagerInfo" style="display: none;"></div>
+<div ng-bind="ngClubInfo" style="display: none;"></div>
 
 <section>
     <!-- left side start-->
@@ -263,49 +276,43 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 col-sm-2 control-label">俱乐部名称</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" ng-model="ngClubInfo.name">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 col-sm-2 control-label">俱乐部地址</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" ng-model="ngClubInfo.address">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 col-sm-2 control-label">俱乐部地图坐标</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control round-input">
+                                        <input type="text" class="form-control round-input" data-original-title="地图应用中的坐标地址" ng-model="ngClubInfo.latlng">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 col-sm-2 control-label">内部联系人</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control tooltips" data-trigger="hover" data-toggle="tooltip" title="" placeholder="Hover me" data-original-title="Tooltip goes here">
+                                        <input type="text" class="form-control tooltips" data-trigger="hover" data-toggle="tooltip" title="" placeholder="内部联系人" data-original-title="用于与靶心平台联系的管理者" ng-model="ngClubInfo.cperson">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 col-sm-2 control-label">箭馆电话</label>
                                     <div class="col-sm-10">
-                                        <input type="text" data-trigger="click" data-content="Content goes here..." data-original-title="The Title" data-placement="top" data-toggle="popover" class="form-control popovers" placeholder="Click Me">
+                                        <input type="text" data-trigger="click" data-content="箭馆的联系电话" data-original-title="通讯" data-placement="top" data-toggle="popover" class="form-control popovers" placeholder="箭馆电话" ng-model="ngClubInfo.phone">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 col-sm-2 control-label">箭道数量</label>
                                     <div class="col-sm-10">
-                                        <input class="form-control" id="focusedInput" type="text" value="This is focused...">
+                                        <input class="form-control" id="focusedInput" type="text" value="This is focused..." ng-model="ngClubInfo.arrowRoadSize">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 col-sm-2 control-label">场地面积</label>
                                     <div class="col-sm-10">
-                                        <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here...">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-2 col-sm-2 control-label">密码</label>
-                                    <div class="col-sm-10">
-                                        <input type="password"  class="form-control" placeholder="">
+                                        <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." ng-model="ngClubInfo.houseSize">
                                     </div>
                                 </div>
 
@@ -352,61 +359,66 @@
                                     <div class="col-lg-10">
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" value="">
+                                                <input type="checkbox" value="" ng-model="ngClubInfo.coach">
                                                 是否有教练
                                             </label>
                                         </div>
 
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" value="">
+                                                <input type="checkbox" value="" ng-model="ngClubInfo.saloon">
                                                 是否有茶座
                                             </label>
                                         </div>
 
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" value="">
+                                                <input type="checkbox" value="" ng-model="ngClubInfo.wifi">
                                                 是否有WIFI
                                             </label>
                                         </div>
 
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" value="">
+                                                <input type="checkbox" value="" ng-model="ngClubInfo.parking">
                                                 是否有停车场
                                             </label>
                                         </div>
                                     </div>
-                                </div>
-                            </form>
-                        </div>
-                    </section>
+                </div>
+                </form>
+            </div>
+        </section>
 
-                    <div class="row">
-                        <div class="col-sm-2 col-md-offset-3">
-                            <button type="button" class="btn btn-success btn-lg btn-block">保存</button>
-                        </div>
-                        <div class="col-sm-2 col-md-offset-2">
-                            <button type="button" class="btn btn-warning btn-lg btn-block">重置</button>
+
+
+        <section class="panel">
+            <header class="panel-heading">
+                场馆信息描述
+            </header>
+            <div class="panel-body">
+                <form method="get" class="form-horizontal bucket-form">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">描述</label>
+                        <div class="col-sm-10">
+                            <textarea rows="6" class="form-control" ng-model="ngClubInfo.summary"></textarea>
                         </div>
                     </div>
+                </form>
+            </div>
 
-                    <section class="panel">
-                        <header class="panel-heading">
-                            场馆信息描述
-                        </header>
-                        <div class="panel-body">
-                            <form method="get" class="form-horizontal bucket-form">
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">描述</label>
-                                    <div class="col-sm-10">
-                                        <textarea rows="6" class="form-control"></textarea>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </section>
+            <div class="panel-footer">
+                <div class="row">
+                    <div class="col-sm-2 col-md-offset-3">
+                        <button type="button" class="btn btn-success btn-lg btn-block">保存</button>
+                    </div>
+                    <div class="col-sm-2 col-md-offset-2">
+                        <button type="button" class="btn btn-warning btn-lg btn-block">重置</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
 
                     <section class="panel">
                         <header class="panel-heading">
@@ -493,6 +505,9 @@
 
 <!--common scripts for all pages-->
 <script src="lib/js/scripts.js"></script>
+
+<script src="http://cdn.bootcss.com/angular.js/1.4.11/angular.min.js"></script>
+<script src="service/club.client.service.js"></script>
 
 </body>
 </html>
