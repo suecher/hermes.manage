@@ -19,4 +19,33 @@ angular.module('app',[])
         $scope.ngClubInfo = currentClub;
         $scope.ngManagerInfo = currentManager;
 
+
+
+        $http.get("/province")
+            .success(function(data) {
+                $scope.provincemodel = data;
+
+                for(var item of data){
+                    if(item.ProId == currentClub.province){
+
+                    }
+                }
+            });
+
+        $http.get("/city")
+            .success(function(data) {
+                $scope.citymodel = data;
+
+            });
+
+
+
+        $http.get("/district")
+            .success(function(data) {
+                $scope.districtmodel = data;
+            });
+
+        $scope.btnSaveClub = function(){
+            alert('修改数据');
+        }
     });
