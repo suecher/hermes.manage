@@ -123,26 +123,28 @@
                         <div class="panel-body">
                             <form class="form-horizontal adminex-form" method="get">
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label col-lg-2" for="inputSuccess">区域</label>
+                                    <label class="col-sm-2 control-label col-lg-2" for="inputSuccess">区域信息</label>
+                                </div>
 
-                                    <div class="col-lg-10">
-                                        <select class="form-control input-lg m-bot15" ng-model="selected" ng-options="m.name for m in provincemodel">
-                                            <option>Option 1</option>
-                                            <option>Option 2</option>
-                                            <option>Option 3</option>
-                                        </select>
-                                        <select class="form-control m-bot15">
-                                            <option>Option 1</option>
-                                            <option>Option 2</option>
-                                            <option>Option 3</option>
-                                        </select>
-                                        <select class="form-control input-sm m-bot15">
-                                            <option>Option 1</option>
-                                            <option>Option 2</option>
-                                            <option>Option 3</option>
-                                        </select>
+                                <div class="form-group">
+                                    <label class="col-sm-2 col-sm-2 control-label">省份</label>
+                                    <div class="col-sm-10">
+                                        <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled="" ng-model="ngClubInfo.provinceName">
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 col-sm-2 control-label">城市</label>
+                                    <div class="col-sm-10">
+                                        <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled="" ng-model="ngClubInfo.cityName">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 col-sm-2 control-label">区县</label>
+                                    <div class="col-sm-10">
+                                        <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled="" ng-model="ngClubInfo.districtName">
+                                    </div>
+                                </div>
+
                             </form>
                         </div>
                     </section>
@@ -211,7 +213,7 @@
                         <button type="button" class="btn btn-success btn-lg btn-block" ng-click="btnSaveClub()">保存</button>
                     </div>
                     <div class="col-sm-2 col-md-offset-2">
-                        <button type="button" class="btn btn-warning btn-lg btn-block">重置</button>
+                        <button type="button" class="btn btn-warning btn-lg btn-block" ng-click="btnReload()">重置</button>
                     </div>
                 </div>
             </div>
@@ -228,8 +230,10 @@
                                     <label class="col-sm-2 control-label">图片</label>
                                     <div class="col-sm-10">
                                         <img src="lib/images/club/1.png" alt="" class="img-responsive" style="border-radius: 8px;">
-                                        <br/><br/>
-                                        <button type="button" class="btn btn-primary"> 上传图片 </button>
+
+
+                                        <label class="control-label">选择上传的文件</label>
+                                        <input id="input-18" type="file" class="file">
                                     </div>
                                 </div>
                             </form>
@@ -293,11 +297,20 @@
     <!-- main content end-->
 </section>
 
+
+
+
+
+
 <!-- Placed js at the end of the document so the pages load faster -->
 <script src="lib/js/jquery-1.10.2.min.js"></script>
 <script src="lib/js/jquery-ui-1.9.2.custom.min.js"></script>
 <script src="lib/js/jquery-migrate-1.2.1.min.js"></script>
-<script src="lib/js/bootstrap.min.js"></script>
+<!--<script src="lib/js/bootstrap.min.js"></script>-->
+
+<script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<link href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" rel="stylesheet">
+
 <script src="lib/js/modernizr.min.js"></script>
 <script src="lib/js/jquery.nicescroll.js"></script>
 
@@ -307,5 +320,18 @@
 <script src="http://cdn.bootcss.com/angular.js/1.4.11/angular.min.js"></script>
 <script src="service/club.client.service.js"></script>
 
+<script src="lib/sweetalert/dist/sweetalert.min.js"></script>
+
+
+
+<link href="lib/sweetalert/dist/sweetalert.css" rel="stylesheet">
+<script src="http://cdn.bootcss.com/bootstrap-fileinput/4.3.2/js/locales/zh.min.js"></script>
+
+
+
+<script>
+
+
+</script>
 </body>
 </html>
