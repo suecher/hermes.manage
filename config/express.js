@@ -41,6 +41,7 @@ module.exports = function(){
     require('../app/routes/login.server.routes')(app);
     //require('../app/routes/message.server.routes')(app);
     require('../app/routes/advert.server.routes')(app);
+    require('../app/routes/upload.server.routes')(app);
 
     app.use(function(req,res){
         res.status(404);

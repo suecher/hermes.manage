@@ -102,4 +102,10 @@ module.exports = function(app){
 
             res.render('clubinfo',{currentClub:currentClub,currentManager:currentManager});
         });
+
+
+    app.route('/upload')
+        .get(function(req,res){
+            res.render('uploadtest',{});
+        });
 };

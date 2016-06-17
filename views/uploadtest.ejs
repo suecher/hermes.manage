@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+
+<script src="lib/js/jquery-1.10.2.min.js"></script>
+<script src="lib/js/jquery-1.10.2.min.js"></script>
+<link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="lib/bootstrap-fileinput/js/fileinput.min.js"></script>
+<link href="lib/bootstrap-fileinput/css/fileinput.min.css" rel="stylesheet">
+<script src="http://cdn.bootcss.com/bootstrap-fileinput/4.3.2/js/locales/zh.min.js"></script>
+
+<script>
+    $(document).on('ready', function() {
+        $("#input-1").fileinput({
+            language: 'zh', //设置语言
+            uploadUrl: '/test', //上传的地址
+            allowedFileExtensions : ['jpg', 'png','gif'],//接收的文件后缀
+            showCaption: false,//是否显示标题
+            browseClass: "btn btn-success", //按钮样式
+            previewFileIcon: "<i class='glyphicon glyphicon-king'></i>"});
+    });
+</script>
+
+<body>
+
+</body>
+</html>
