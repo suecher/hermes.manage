@@ -9,8 +9,7 @@ let UploadController = require('../controllers/upload.server.controller');
 module.exports = function(app){
     app.route('/uploadclubpic')
         .post(function(req,res){
-            //console.log(req);
-            console.log(req.query);
+            let clubId = req.query.clubId;
             res.json({result:true});
         });
 };

@@ -6,5 +6,6 @@
 
 module.exports = {
     port:7171,
-    interface:"http://192.168.1.254:7105"
+    interface:"http://192.168.1.254:7105",
+    clubrootdir:"D:\\clubpic\\"
 };
