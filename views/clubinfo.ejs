@@ -222,20 +222,14 @@
                         <header class="panel-heading">
                             场馆展示
                         </header>
-                        <div class="panel-body">
-                            <form method="get" class="form-horizontal bucket-form">
+                        <div class="panel-body" >
+                            <form method="get" class="form-horizontal bucket-form" ng-repeat="item in ngClubPic">
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">图片</label>
                                     <div class="col-sm-10">
-                                        <img src="lib/images/club/1.png" alt="" class="img-responsive" style="border-radius: 8px;">
-
-
-                                        <label class="control-label">选择上传的文件</label>
-                                        <input id="clubpic1" type="file" class="file">
-
-                                        <label class="control-label">选择上传的文件</label>
-                                        <input id="input-1" name="inputFile" type="file" multiple class="file-loading">
-
+                                        <img src="{{item}}" alt="" class="img-responsive" style="border-radius: 8px;">
+                                        <br>
+                                        <button type="button" class="btn btn-warning btn-lg" ng-click="btnRemovePic($index)">删除图片</button>
                                     </div>
 
                                 </div>
@@ -248,40 +242,10 @@
                             场馆展示
                         </header>
                         <div class="panel-body">
-                            <form method="get" class="form-horizontal bucket-form">
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">图片</label>
-                                    <div class="col-sm-10">
-                                        <img src="lib/images/club/2.png" alt="" class="img-responsive" style="border-radius: 8px;">
-                                        <br/><br/>
-                                        <button type="button" class="btn btn-primary"> 上传图片 </button>
-                                    </div>
-                                </div>
-                            </form>
+                            <label class="control-label">选择上传的文件</label>
+                            <input id="input-1" name="inputFile" type="file" multiple class="file-loading">
                         </div>
                     </section>
-
-
-                    <section class="panel">
-                        <header class="panel-heading">
-                            场馆展示
-                        </header>
-                        <div class="panel-body">
-                            <form method="get" class="form-horizontal bucket-form">
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">图片</label>
-                                    <div class="col-sm-10">
-                                        <img src="lib/images/club/3.png" alt="" class="img-responsive" style="border-radius: 8px;">
-                                        <br/><br/>
-                                        <button type="button" class="btn btn-primary"> 上传图片 </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </section>
-
-
-
                 </div>
             </div>
 

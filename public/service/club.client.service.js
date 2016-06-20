@@ -18,8 +18,9 @@ angular.module('app',[])
 
         $scope.ngClubInfo = currentClub;
         $scope.ngManagerInfo = currentManager;
-
-
+        $scope.ngClubPic = currentClub.pictureList.map(function(item,index){
+            return "http://192.168.1.254:7105/files/clubs/5720a901719cc290ac48c355/" + item;
+        });
 
         $http.get("/province")
             .success(function(data) {
@@ -28,7 +29,6 @@ angular.module('app',[])
                         $scope.ngClubInfo.provinceName = item.name;
                     }
                 }
-
             });
 
         $http.get("/city")
@@ -39,7 +39,6 @@ angular.module('app',[])
                     }
                 }
             });
-
 
         $http.get("/district")
             .success(function(data) {
@@ -54,6 +53,37 @@ angular.module('app',[])
 
         // 重置基本数据
         $scope.btnReload = function(){
+
+        };
+
+
+        $scope.btnRemovePic = function(index){
+
+            swal({
+                title: "您确定删除这张图片吗??",
+                text: "删除后移动端也将同时删除这张展示图",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "提交",
+                cancelButtonText:"取消",
+                closeOnConfirm: false,
+                closeOnCancel: false
+            }, function (isConfirm) {
+                if (isConfirm) {
+                    //$http.post("/updateclub",$scope.ngClubInfo)
+                    //    .success(function(data) {
+                    //        swal("确定!", "修改成功", "success");
+                    //    })
+                    //    .error(function(data){
+                    //        console.log(data);
+                    //    });
+
+                    alert($scope.ngClubInfo.pictureList[index]);
+                } else {
+                    swal("取消", "放弃删除", "error");
+                }
+            });
 
         };
 
