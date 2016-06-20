@@ -70,7 +70,15 @@ angular.module('app',[])
                 closeOnCancel: false
             }, function (isConfirm) {
                 if (isConfirm) {
-                    swal("确定!", "修改成功", "success");
+                    $http.post("/updateclub",$scope.ngClubInfo)
+                        .success(function(data) {
+                            swal("确定!", "修改成功", "success");
+                        })
+                        .error(function(data){
+                            console.log(data);
+                        });
+
+
                 } else {
                     swal("取消", "放弃修改", "error");
                 }

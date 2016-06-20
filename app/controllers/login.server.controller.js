@@ -24,7 +24,6 @@ module.exports = {
             if (!error && res.statusCode == 200) {
                 callback(body);
             }
-            console.log(res);
         });
     }
 };

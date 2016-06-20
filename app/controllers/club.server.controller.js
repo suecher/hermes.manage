@@ -28,6 +28,7 @@ module.exports = {
         });
     },
     updateClubInfo:function(clubId,updateObj,callback){
+
         let options = {
             url:config.interface + "/clubupdate",
             headers:{
@@ -45,5 +46,13 @@ module.exports = {
                 callback(body);
             }
         });
+    },
+    /**
+     * 俱乐部活跃用户
+     * @param clubId
+     * @param callback
+     */
+    activeClubUser:function(clubId,callback){
+
     }
 };

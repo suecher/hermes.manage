@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="ThemeBucket">
-    <link rel="shortcut icon" href="#" type="image/png">
 
     <title>俱乐部信息</title>
     <link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -27,7 +26,6 @@
     var currentManager = '<%- JSON.stringify(currentManager) %>';
     currentClub = JSON.parse(currentClub);
     currentManager = JSON.parse(currentManager);
-
 </script>
 
 <body class="sticky-header" ng-controller="ClubCtrl">
@@ -235,10 +233,11 @@
                                         <label class="control-label">选择上传的文件</label>
                                         <input id="clubpic1" type="file" class="file">
 
-                                        <label class="control-label">Select File</label>
-                                        <input id="input-1" name="input1[]" type="file" multiple class="file-loading">
+                                        <label class="control-label">选择上传的文件</label>
+                                        <input id="input-1" name="inputFile" type="file" multiple class="file-loading">
 
                                     </div>
+
                                 </div>
                             </form>
                         </div>
@@ -297,7 +296,7 @@
         <!--footer section end-->
 
 
-    </div>                                                   a
+    </div>
     <!-- main content end-->
 </section>
 
@@ -338,13 +337,13 @@
     $(document).on('ready', function() {
         $("#input-1").fileinput({
             language: 'zh', //设置语言
-            uploadUrl: '/uploadclubpic?userId=xxx', //上传的地址
+            uploadUrl: '/uploadclubpic?clubId='+currentClub._id, //上传的地址
             allowedFileExtensions : ['jpg', 'png','gif'],//接收的文件后缀
             showCaption: false,//是否显示标题
             browseClass: "btn btn-success", //按钮样式
             previewFileIcon: "<i class='glyphicon glyphicon-king'></i>"})
                 .on("filebatchselected",function(event,files){
-                    alert('haha');
+                    alert(currentCLub._id);
                 })
                 .on("fileuploaded",function(event,data){
                     alert('上传成功');
