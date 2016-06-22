@@ -34,4 +34,14 @@ module.exports = function(app){
 
             });
         });
+
+    app.route('/removeclubpic')
+        .post(function(req,res){
+            let clubId = req.body.clubId;
+            let picId = req.body.picId;
+
+            ClubController.removeClibPic(clubId,picId,function(result){
+                res.json(result);
+            });
+        });
 };

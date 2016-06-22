@@ -23,6 +23,7 @@ module.exports = {
 
         request.post(options,function(error,res,body){
             if (!error && res.statusCode == 200) {
+
                 callback(body);
             }
         });
@@ -54,5 +55,25 @@ module.exports = {
      */
     activeClubUser:function(clubId,callback){
 
+    },
+    removeClibPic:function(clubId,picId,callback)
+    {
+        let options = {
+            url:config.interface + "/removeclubpic",
+            headers:{
+                'Content-Type':'application/json',
+                'User-Agent':'request'
+            },
+            json:{
+                "clubId":clubId,
+                "picId":picId
+            }
+        };
+
+        request.post(options,function(error,res,body){
+            if (!error && res.statusCode == 200) {
+                callback(body);
+            }
+        });
     }
 };

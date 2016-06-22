@@ -4,8 +4,30 @@
 
 "use strict";
 
+
 angular.module('app',[])
     .controller('ClubCtrl',function($scope,$http){
+
+        let serverUrl = "http://192.168.1.254:7105";
+
+        $("#input-1").fileinput({
+                language: 'zh', //设置语言
+                uploadUrl: '/uploadclubpic?clubId='+currentClub._id, //上传的地址
+                allowedFileExtensions : ['jpg', 'png','gif'],//接收的文件后缀
+                showCaption: false,//是否显示标题
+                browseClass: "btn btn-success", //按钮样式
+                previewFileIcon: "<i class='glyphicon glyphicon-king'></i>"})
+            .on("filebatchselected",function(event,files){
+                console.log($scope.ngClubPic);
+                $scope.ngClubPic.push(serverUrl+ "/files/clubs/"+ currentClub._id +"/" + "555.png");
+                console.log($scope.ngClubPic);
+            })
+            .on("fileuploaded",function(event,data){
+                swal("确定!", "上传成功", "success");
+                $scope.ngClubPic.push(serverUrl+ "/files/clubs/"+ currentClub._id +"/" + data.response.filename);
+            });
+
+
        //alert( $("#currentClubInfo").text().toString());
 
         //$scope.userId = currentUserInfo.address;
@@ -19,7 +41,9 @@ angular.module('app',[])
         $scope.ngClubInfo = currentClub;
         $scope.ngManagerInfo = currentManager;
         $scope.ngClubPic = currentClub.pictureList.map(function(item,index){
-            return "http://192.168.1.254:7105/files/clubs/5720a901719cc290ac48c355/" + item;
+
+            //return config.interface + "/files/clubs/" + currentClub._id + "/" + item;
+            return serverUrl + "/files/clubs/"+ currentClub._id +"/" + item;
         });
 
         $http.get("/province")
@@ -50,7 +74,6 @@ angular.module('app',[])
                 }
             });
 
-
         // 重置基本数据
         $scope.btnReload = function(){
 
@@ -68,18 +91,30 @@ angular.module('app',[])
                 confirmButtonText: "提交",
                 cancelButtonText:"取消",
                 closeOnConfirm: false,
-                closeOnCancel: false
+                closeOnCancel: true
             }, function (isConfirm) {
                 if (isConfirm) {
-                    //$http.post("/updateclub",$scope.ngClubInfo)
-                    //    .success(function(data) {
-                    //        swal("确定!", "修改成功", "success");
-                    //    })
-                    //    .error(function(data){
-                    //        console.log(data);
-                    //    });
 
-                    alert($scope.ngClubInfo.pictureList[index]);
+                    $http.post("/removeclubpic",{clubId:$scope.ngClubInfo._id,picId:$scope.ngClubInfo.pictureList[index]})
+                        .success(function(data) {
+                            swal("确定!", "修改成功", "success");
+
+                            let pictureList = $scope.ngClubInfo.pictureList.filter(function(item){
+                                if(item !== $scope.ngClubInfo.pictureList[index]){
+                                    return item;
+                                }
+                            });
+
+                            $scope.ngClubInfo.pictureList = pictureList;
+                            $scope.ngClubPic = null;
+                            $scope.ngClubPic = $scope.ngClubInfo.pictureList.map(function(item){
+                                return serverUrl + "/files/clubs/"+ currentClub._id +"/" + item;
+                            });
+
+                        })
+                        .error(function(data){
+                            console.log(data);
+                        });
                 } else {
                     swal("取消", "放弃删除", "error");
                 }
@@ -107,7 +142,6 @@ angular.module('app',[])
                         .error(function(data){
                             console.log(data);
                         });
-
 
                 } else {
                     swal("取消", "放弃修改", "error");

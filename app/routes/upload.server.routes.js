@@ -13,8 +13,8 @@ module.exports = function(app){
     app.route('/uploadclubpic')
         .post(function(req,res){
             let clubId = req.query.clubId;
-            UploadController.clubpic(clubId,req,function(){
-                res.json({result:true});
+            UploadController.clubpic(clubId,req,function(result){
+                res.json(result);
             });
         });
 

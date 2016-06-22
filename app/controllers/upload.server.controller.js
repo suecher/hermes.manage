@@ -26,7 +26,7 @@ module.exports = {
                 fs.mkdirSync(config.clubrootdir + clubId+"\\");
             };
 
-            console.log(clubId);
+            
 
             let filepath = config.clubrootdir + clubId+"\\";
 
@@ -61,7 +61,7 @@ module.exports = {
                                 console.log('rename ok');
                                 //根据id获取俱乐部信息
                                 ClubController.getClub(clubId,function(result){
-                                    let currentClub = result;
+                                    let currentClub = result.body;
                                     currentClub.pictureList.push(filename);
                                     ClubController.updateClubInfo(clubId,currentClub,function(clubUpResult){
 

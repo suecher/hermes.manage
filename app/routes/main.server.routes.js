@@ -113,8 +113,10 @@ module.exports = function(app){
             });
         });
 
-    app.route('/upload')
+
+    app.route('logout')
         .get(function(req,res){
-            res.render('uploadtest',{});
-        });
+            req.session.user = null;
+            res.render('login');
+        })
 };

@@ -299,19 +299,7 @@
 
 <script>
     $(document).on('ready', function() {
-        $("#input-1").fileinput({
-            language: 'zh', //设置语言
-            uploadUrl: '/uploadclubpic?clubId='+currentClub._id, //上传的地址
-            allowedFileExtensions : ['jpg', 'png','gif'],//接收的文件后缀
-            showCaption: false,//是否显示标题
-            browseClass: "btn btn-success", //按钮样式
-            previewFileIcon: "<i class='glyphicon glyphicon-king'></i>"})
-                .on("filebatchselected",function(event,files){
-                    alert(currentCLub._id);
-                })
-                .on("fileuploaded",function(event,data){
-                    alert('上传成功');
-                });
+
     });
 </script>
 </body>
