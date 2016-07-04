@@ -21,14 +21,14 @@ module.exports = {
                 fs.mkdirSync(config.clubrootdir);
             };
 
-            folder_exists = fs.existsSync(config.clubrootdir + clubId+"\\");
+            folder_exists = fs.existsSync(config.clubrootdir + clubId+"/");
             if(!folder_exists){
-                fs.mkdirSync(config.clubrootdir + clubId+"\\");
+                fs.mkdirSync(config.clubrootdir + clubId+"/");
             };
 
             
 
-            let filepath = config.clubrootdir + clubId+"\\";
+            let filepath = config.clubrootdir + clubId+"/";
 
             let form = new multiparty.Form({uploadDir:filepath});
             form.maxFilesSize = 2 * 1024 * 1024;
